@@ -1,0 +1,9 @@
+DirectoryIndex index.html
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} (iPhone|Android.*Mobile|Windows.*Phone) [NC]
+RewriteCond %{QUERY_STRING} !mode=pc
+RewriteRule ^$ /murasaki/index_phone.html [R,L]
+</IfModule>
